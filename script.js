@@ -78,7 +78,10 @@ const displayCategories = (categories) => {
   for (const category of categories) {
     const div = document.createElement("div");
     div.innerHTML = /* html */ `
-          <button id="btn-${category.category_id}" onclick="fetchCategoryVideos(${category.category_id})" class="btn btn-sm hover:bg-[#ff1f3d] hover:text-white">${category.category}</button>
+          <button
+            id="btn-${category.category_id}"
+            onclick="fetchCategoryVideos(${category.category_id})"
+            class="btn btn-sm hover:bg-[#ff1f3d] hover:text-white">${category.category}</button>
     `;
     categoryContainer.append(div);
   }
