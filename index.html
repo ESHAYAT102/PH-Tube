@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH Tube</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .active {
+        background-color: #ff1f3d;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="w-11/12 mx-auto flex justify-between border-[#17171720] border-b-2 py-5 items-center"
+      >
+        <div>
+          <img class="w-32" src="./assets/Logo.png" />
+        </div>
+        <div>
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              id="search-input"
+              type="search"
+              class="grow"
+              placeholder="Search"
+            />
+            <kbd class="kbd kbd-sm">⌘</kbd>
+            <kbd class="kbd kbd-sm">K</kbd>
+          </label>
+        </div>
+        <div>
+          <button class="btn bg-[#ff1f3d] text-white">Sort By Views</button>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      id="category-container"
+      class="flex py-5 justify-center items-center gap-5"
+    >
+      <div>
+        <button
+          onclick="fetchVideos()"
+          id="btn-all"
+          class="btn btn-sm hover:bg-[#ff1f3d] hover:text-white"
+        >
+          All
+        </button>
+      </div>
+    </div>
+
+    <section id="loader" class="text-center py-10 hidden">
+      <span class="loading loading-spinner loading-xl"></span>
+    </section>
+
+    <section
+      id="video-container"
+      class="w-11/12 mx-auto grid grid-cols-4 gap-5"
+    ></section>
+
+    <dialog id="videoDetails" class="modal">
+      <div class="modal-box">
+        <div id="details-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <script src="./script.js"></script>
+  </body>
+</html>
